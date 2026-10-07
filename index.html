@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>آ گومون قهراش 😍</title>
+
+<style>
+
+@font-face {
+    font-family: "Estedad";
+    src: url("fonts/Estedad-Regular.woff2") format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Estedad";
+    src: url("fonts/Estedad-Medium.woff2") format("woff2");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Estedad";
+    src: url("fonts/Estedad-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Estedad";
+    src: url("fonts/Estedad-Bold.woff2") format("woff2");
+    font-weight: 700;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Estedad", sans-serif;
+    font-weight: 700;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+
+    min-height:100svh;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    color:white;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,80,150,.20),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(150,70,255,.16),
+            transparent 35%
+        ),
+
+        #120b16;
+
+    animation: pageFadeIn .5s ease;
+}
+
+
+/* پترن */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+        url("images/pattern.png");
+
+    background-repeat:repeat;
+
+    background-size:180px 180px;
+
+    opacity:.12;
+
+    pointer-events:none;
+}
+
+
+/* محتوای صفحه */
+
+.page{
+
+    width:100%;
+
+    max-width:430px;
+
+    min-height:calc(100svh - 40px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px 22px;
+
+    position:relative;
+
+    z-index:2;
+
+    animation: contentEnter .7s ease;
+}
+
+
+/* قلب */
+
+.heart{
+
+    font-size:75px;
+
+    color:#ff5f9e;
+
+    margin-bottom:25px;
+
+    filter:
+        drop-shadow(
+            0 0 20px
+            rgba(255,95,158,.55)
+        );
+
+    animation:
+        heartbeat 1.7s infinite;
+}
+
+
+/* عنوان */
+
+h1{
+
+    font-size:29px;
+
+    line-height:1.8;
+
+    margin-bottom:12px;
+}
+
+
+/* متن */
+
+.subtitle{
+
+    font-size:18px;
+
+    line-height:2;
+
+    color:#dbcbd8;
+
+    margin-bottom:35px;
+}
+
+
+/* دکمه */
+
+.button{
+
+    width:190px;
+
+    height:54px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:17px;
+
+    font-size:17px;
+
+    color:white;
+
+    text-decoration:none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5f9e,
+            #c94cff
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(255,95,158,.25);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.button:active{
+
+    transform:scale(.94);
+
+    box-shadow:
+        0 6px 15px
+        rgba(255,95,158,.18);
+
+}
+
+
+/* انیمیشن قلب */
+
+@keyframes heartbeat{
+
+    0%,
+    100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.1);
+    }
+
+}
+
+
+/* ترنزیشن ورود صفحه */
+
+@keyframes pageFadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+
+/* انیمیشن ورود محتوا */
+
+@keyframes contentEnter{
+
+    from{
+        opacity:0;
+        transform:translateY(18px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* ترنزیشن خروج صفحه */
+
+body.page-exit{
+
+    animation:pageFadeOut .35s ease forwards;
+
+}
+
+
+@keyframes pageFadeOut{
+
+    from{
+        opacity:1;
+    }
+
+    to{
+        opacity:0;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<main class="page">
+
+    <div class="heart">
+        ❤️
+    </div>
+
+
+    <h1>
+        سلاملکم گومونش 🥰
+    </h1>
+
+
+    <p class="subtitle">
+        بیا تو کارت دارم 😋
+    </p>
+
+
+    <a
+        href="page2.html"
+        class="button"
+    >
+        بریم 🚶🏻
+    </a>
+
+</main>
+
+
+<script>
+
+document.querySelectorAll("a.button").forEach(link => {
+
+    link.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+
+            window.location.href = this.href;
+
+        }, 350);
+
+    });
+
+});
+
+</script>
+
+</body>
+
+</html>

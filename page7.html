@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>آ گومون قهراش 😍</title>
+
+<style>
+
+@font-face {
+    font-family: "Estedad";
+    src: url("fonts/Estedad-Regular.woff2") format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Estedad";
+    src: url("fonts/Estedad-Medium.woff2") format("woff2");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Estedad";
+    src: url("fonts/Estedad-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Estedad";
+    src: url("fonts/Estedad-Bold.woff2") format("woff2");
+    font-weight: 700;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Estedad", sans-serif;
+    font-weight: 700;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+
+    min-height:100svh;
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    color:white;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,80,150,.20),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(150,70,255,.18),
+            transparent 40%
+        ),
+
+        #120b16;
+
+    animation:pageFadeIn .5s ease;
+}
+
+
+/* پترن */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+        url("images/pattern.png");
+
+    background-repeat:repeat;
+
+    background-size:180px 180px;
+
+    opacity:.12;
+
+    pointer-events:none;
+}
+
+
+/* صفحه */
+
+.page{
+
+    width:100%;
+    height:100svh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px 22px;
+
+    position:relative;
+
+    z-index:2;
+
+    animation:contentEnter .7s ease;
+}
+
+
+/* قلب */
+
+.heart{
+
+    font-size:60px;
+
+    margin-bottom:28px;
+
+    filter:
+        drop-shadow(
+            0 0 15px
+            rgba(255,95,158,.6)
+        );
+
+    animation:
+        heartbeat 1.7s infinite,
+        textAppear .8s ease;
+}
+
+
+/* متن */
+
+.message{
+
+    max-width:380px;
+
+    font-size:22px;
+
+    line-height:2;
+
+    margin-bottom:40px;
+
+    text-shadow:
+        0 2px 12px
+        rgba(0,0,0,.5);
+
+    animation:textAppear 1s ease;
+}
+
+
+/* دکمه‌ها */
+
+.buttons{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    position:relative;
+
+    min-height:60px;
+
+    animation:textAppear 1.15s ease;
+}
+
+
+.button{
+
+    width:145px;
+    height:54px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:17px;
+
+    font-size:17px;
+
+    color:white;
+
+    text-decoration:none;
+
+    border:none;
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+    transition:
+        transform .2s ease;
+}
+
+
+/* آره */
+
+.yes{
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5f9e,
+            #c94cff
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(255,95,158,.25);
+}
+
+
+/* نه */
+
+.no{
+
+    background:
+        rgba(0,0,0,.5);
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    color:#eee;
+
+    position:relative;
+
+}
+
+
+/* وقتی فرار می‌کند */
+
+.no.running{
+
+    position:fixed;
+
+    transition:
+        left .25s ease,
+        top .25s ease,
+        transform .2s ease;
+}
+
+
+.button:active{
+
+    transform:scale(.94);
+}
+
+
+/* قلب */
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.12);
+    }
+
+}
+
+
+/* انیمیشن ورود صفحه */
+
+@keyframes pageFadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+
+@keyframes contentEnter{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* انیمیشن ورود متن */
+
+@keyframes textAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(18px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* خروج صفحه */
+
+body.page-exit{
+
+    animation:pageFadeOut .35s ease forwards;
+}
+
+
+@keyframes pageFadeOut{
+
+    from{
+        opacity:1;
+    }
+
+    to{
+        opacity:0;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<main class="page">
+
+
+    <div class="heart">
+       😘
+    </div>
+
+
+    <p class="message">
+        انقدر دوسم داری که می‌خوای
+        همین الان کلی بوسم کنی؟ 🥰😌
+    </p>
+
+
+    <div class="buttons">
+
+        <a
+            href="page8.html"
+            class="button yes"
+        >
+            هلی کوشولو 😘
+        </a>
+
+
+        <button
+            class="button no"
+            id="noButton"
+        >
+            نو 😐
+        </button>
+
+    </div>
+
+
+</main>
+
+
+<script>
+
+const noButton =
+    document.getElementById("noButton");
+
+
+const messages = [
+
+    "مطمئنی؟ 🥺",
+
+    "بازم فکر کن 😌",
+
+    "نوموخوامممم 😭",
+
+    "نه دیگه... 😐",
+
+    "سه دورو 😭",
+
+    "  من خو میدونم 😌",
+
+    "الان میام نام نامت میکنما 😈"
+
+];
+
+
+let count = 0;
+
+
+function runAway(){
+
+    noButton.classList.add("running");
+
+
+    const buttonWidth =
+        noButton.offsetWidth;
+
+    const buttonHeight =
+        noButton.offsetHeight;
+
+
+    const padding = 20;
+
+
+    const maxX =
+        window.innerWidth -
+        buttonWidth -
+        padding;
+
+
+    const maxY =
+        window.innerHeight -
+        buttonHeight -
+        padding;
+
+
+    const x =
+        padding +
+        Math.random() * (maxX - padding);
+
+
+    const y =
+        padding +
+        Math.random() * (maxY - padding);
+
+
+    noButton.style.left =
+        `${x}px`;
+
+    noButton.style.top =
+        `${y}px`;
+
+
+    noButton.textContent =
+        messages[count % messages.length];
+
+
+    count++;
+
+}
+
+
+/* لمس روی موبایل */
+
+noButton.addEventListener(
+    "touchstart",
+    function(e){
+
+        e.preventDefault();
+
+        runAway();
+
+    }
+);
+
+
+/* کلیک */
+
+noButton.addEventListener(
+    "click",
+    function(){
+
+        runAway();
+
+    }
+);
+
+
+/* رفتن به صفحه بعد با ترنزیشن */
+
+const yesButton =
+    document.querySelector(".yes");
+
+yesButton.addEventListener(
+    "click",
+    function(e){
+
+        e.preventDefault();
+
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+
+            window.location.href = this.href;
+
+        }, 350);
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

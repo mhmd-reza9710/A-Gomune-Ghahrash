@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>آ گومون قهراش 😍</title>
+
+    <style>
+    
+    @font-face {
+    font-family: "Estedad";
+    src: url("fonts/Estedad-Regular.woff2") format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Estedad";
+    src: url("fonts/Estedad-Medium.woff2") format("woff2");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Estedad";
+    src: url("fonts/Estedad-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Estedad";
+    src: url("fonts/Estedad-Bold.woff2") format("woff2");
+    font-weight: 700;
+}
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Estedad", sans-serif;
+            font-weight: 700;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            min-height: 100svh;
+
+            font-family: Tahoma, Arial, sans-serif;
+            color: white;
+
+            overflow: hidden;
+
+            background: #120b16;
+
+            animation: pageFadeIn 0.5s ease;
+        }
+
+        .page {
+            width: 100%;
+            height: 100svh;
+
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            overflow: hidden;
+        }
+
+        /* عکس پس‌زمینه */
+        .background-image {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            z-index: 0;
+        }
+
+        /* لایه روی عکس */
+        .overlay {
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(18, 11, 22, 0.35),
+                    rgba(18, 11, 22, 0.55)
+                );
+
+            z-index: 1;
+        }
+
+        /* متن و دکمه */
+        .content {
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+
+            padding: 30px 25px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            transform: translateY(150px);
+
+            animation: contentEnter 0.7s ease;
+        }
+
+        .message {
+            max-width: 380px;
+
+            font-size: 20px;
+            line-height: 2;
+
+            text-shadow:
+                0 2px 10px rgba(0, 0, 0, 0.7);
+
+            margin-bottom: 35px;
+        }
+
+        .button {
+            width: 190px;
+            height: 54px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 17px;
+
+            font-size: 17px;
+
+            color: white;
+            text-decoration: none;
+
+            background: linear-gradient(
+                135deg,
+                #ff5f9e,
+                #c94cff
+            );
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.35);
+
+            transition: transform 0.2s ease;
+
+            position: relative;
+            z-index: 3;
+        }
+
+        .button:active {
+            transform: scale(0.94);
+        }
+
+
+        /* ترنزیشن ورود صفحه */
+
+        @keyframes pageFadeIn {
+
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+        }
+
+
+        /* انیمیشن ورود محتوا */
+
+        @keyframes contentEnter {
+
+            from {
+                opacity: 0;
+                transform: translateY(168px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(150px);
+            }
+
+        }
+
+
+        /* ترنزیشن خروج صفحه */
+
+        body.page-exit {
+
+            animation: pageFadeOut 0.35s ease forwards;
+
+        }
+
+
+        @keyframes pageFadeOut {
+
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main class="page">
+
+        <img
+            src="images/3.jpg"
+            alt=""
+            class="background-image"
+        >
+
+        <div class="overlay"></div>
+
+        <div class="content">
+
+            <p class="message">
+                اگه کمتر احمق می‌بودم حتما کلی اکور
+                پکورت میکردم تا حالت خوب شه.
+                به عنوان پیشی کوچولوی شما کم کاری کردم 😿
+            </p>
+
+            <a href="page5.html" class="button">
+                میدونم 😒
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        document.querySelectorAll("a.button").forEach(link => {
+
+            link.addEventListener("click", function(e) {
+
+                e.preventDefault();
+
+                document.body.classList.add("page-exit");
+
+                setTimeout(() => {
+
+                    window.location.href = this.href;
+
+                }, 350);
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
